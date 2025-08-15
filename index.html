@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Thornic AI - Mobile</title>
+<style>
+  html, body {
+    margin: 0; padding: 0; height: 100%; width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0084ff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  #splash-container {
+    display: flex;
+    align-items: center;
+    color: white;
+    gap: 16px;
+  }
+  #splash-container svg {
+    width: 80px;
+    height: 80px;
+    fill: white;
+    flex-shrink: 0;
+  }
+  #app-name {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+  <div id="splash-container" role="img" aria-label="Thornic AI logo and splash screen">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z"/>
+    </svg>
+    <div id="app-name">Thornic AI</div>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      window.location.href = 'LoginActivity.html';
+    }, 3000);
+  </script>
+</body>
+</html>
