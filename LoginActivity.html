@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>Thornic AI - Login</title>
+<title>Thornic AI - Mobile</title>
 <style>
     html, body {
         margin: 0; padding: 0; height: 100%; width: 100%;
@@ -128,6 +128,9 @@
                 return;
             }
             greetingMessage.textContent = `Hello, ${name}! We are getting things ready!`;
+            setTimeout(() => {
+                window.location.href = 'MainActivity.html';
+            }, 3000);
         });
 
         usernameInput.addEventListener('keydown', e => {
