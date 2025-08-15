@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Thornic AI - Login</title>
+<style>
+    html, body {
+        margin: 0; padding: 0; height: 100%; width: 100%;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #f0f2f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+    }
+    #login-container {
+        background: white;
+        padding: 30px 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        width: 320px;
+        text-align: center;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        border-radius: 0;
+    }
+    #login-header {
+        margin-bottom: 24px;
+        text-align: center;
+    }
+    #welcome-text {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: #444;
+        margin-bottom: 6px;
+    }
+    #title-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+    }
+    #title-container svg {
+        fill: #0084ff;
+        width: 48px;
+        height: 48px;
+        flex-shrink: 0;
+    }
+    #app-title {
+        font-weight: 700;
+        color: #000;
+        font-size: 1.8rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+    }
+    p {
+        color: #444;
+        margin-bottom: 24px;
+    }
+    input[type="text"] {
+        width: 100%;
+        padding: 12px 16px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        outline: none;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+    }
+    input[type="text"]:focus {
+        border-color: #0084ff;
+    }
+    button {
+        width: 100%;
+        padding: 12px 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: white;
+        background-color: #0084ff;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #006edc;
+    }
+    #greeting-message {
+        margin-top: 20px;
+        font-weight: 600;
+        color: #0084ff;
+        min-height: 24px;
+    }
+</style>
+</head>
+<body>
+    <div id="login-container">
+        <div id="login-header">
+            <div id="welcome-text">Welcome to</div>
+            <div id="title-container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z"/>
+                </svg>
+                <h1 id="app-title">Thornic AI</h1>
+            </div>
+        </div>
+        <p>Please enter your name to continue</p>
+        <input type="text" id="username" placeholder="Your name" autocomplete="off" />
+        <button id="login-btn">Start Chatting</button>
+        <div id="greeting-message" aria-live="polite"></div>
+    </div>
+
+    <script>
+        const loginBtn = document.getElementById('login-btn');
+        const usernameInput = document.getElementById('username');
+        const greetingMessage = document.getElementById('greeting-message');
+
+        loginBtn.addEventListener('click', () => {
+            const name = usernameInput.value.trim();
+            if (!name) {
+                greetingMessage.textContent = "Please enter your name.";
+                return;
+            }
+            greetingMessage.textContent = `Hello, ${name}! We are getting things ready!`;
+        });
+
+        usernameInput.addEventListener('keydown', e => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                loginBtn.click();
+            }
+        });
+    </script>
+</body>
+</html>
